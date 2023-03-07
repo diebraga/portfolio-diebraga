@@ -1,15 +1,34 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF, Float } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("/mac-draco.glb");
+
+  const animate = (delta) => {
+    setPositionY(Math.sin(delta) * 0.5 - 2.5);
+  };
+
+  // Define state variables to store the position of the primitive
+  const [positionX, setPositionX] = useState(0);
+  const [positionY, setPositionY] = useState(0);
+
+  // Use the useFrame hook to update the position of the primitive on each frame update
+  useFrame(({ clock }) => {
+    // Calculate the new position based on the current time
+    const newPositionX = Math.sin(clock.getElapsedTime()) * 0.2;
+    const newPositionY = Math.cos(clock.getElapsedTime()) * 0.2;
+
+    // Update the state variables to trigger a re-render with the new position
+    setPositionX(newPositionX);
+    setPositionY(newPositionY);
+  });
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -22,8 +41,12 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        position={[
+          isMobile ? positionX / 2 : positionX,
+          isMobile ? -3 : -3.25,
+          isMobile ? positionY / 2 - 2.2 : positionY - 1.5,
+        ]}
+        rotation={[0, Math.PI / 4, 0]}
       />
     </mesh>
   );
@@ -55,19 +78,17 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
+        <OrbitControls makeDefault />
+        <Float>
+          <Computers isMobile={isMobile} />
+        </Float>
       </Suspense>
 
       <Preload all />

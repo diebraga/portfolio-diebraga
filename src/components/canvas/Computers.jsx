@@ -7,10 +7,6 @@ import CanvasLoader from "../Loader";
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("/mac-draco.glb");
 
-  const animate = (delta) => {
-    setPositionY(Math.sin(delta) * 0.5 - 2.5);
-  };
-
   // Define state variables to store the position of the primitive
   const [positionX, setPositionX] = useState(0);
   const [positionY, setPositionY] = useState(0);
@@ -85,7 +81,7 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls makeDefault />
+        <OrbitControls makeDefault enableZoom={false}/>
         <Float>
           <Computers isMobile={isMobile} />
         </Float>

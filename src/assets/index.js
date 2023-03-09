@@ -4,6 +4,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import kos from "./kos.webp";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -19,19 +20,21 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import rn from "./tech/rn.png";
-import pyejs from "./tech/pyejs.png";
+import python from "./tech/python.png";
+import templ8 from "./tech/8.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import hertz from "./company/hertz.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 export {
-  pyejs,
+  python,
   backend,
   rn,
   mobile,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  kos,
+  templ8,
+  hertz
 };

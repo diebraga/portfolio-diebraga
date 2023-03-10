@@ -22,6 +22,17 @@ import threejs from "./tech/threejs.svg";
 import rn from "./tech/rn.png";
 import python from "./tech/python.png";
 import templ8 from "./tech/8.png";
+import chackra from "./tech/chackra.jpeg";
+import next from "./tech/next.png";
+import babylon from "./tech/babylon.png";
+import graph from "./tech/graph.png";
+import apollo from "./tech/apollo.png";
+import query from "./tech/query.png";
+import prisma from "./tech/prisma.png";
+import socket from "./tech/socket.png";
+import express from "./tech/express.jpeg";
+import django from "./tech/django.png";
+import grpc from "./tech/grpc.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -64,5 +75,16 @@ export {
   tripguide,
   kos,
   templ8,
-  hertz
+  hertz,
+  chackra,
+  next,
+  babylon,
+  apollo,
+  graph,
+  query,
+  socket,
+  express,
+  prisma,
+  django,
+  grpc
 };

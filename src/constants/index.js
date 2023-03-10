@@ -5,13 +5,11 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
-  figma,
-  docker,
+  chackra,
+  next,
   carrent,
   jobit,
   tripguide,
@@ -20,6 +18,15 @@ import {
   kos,
   templ8,
   hertz,
+  babylon,
+  apollo,
+  graph,
+  query,
+  django,
+  express,
+  prisma,
+  socket,
+  grpc
 } from "../assets";
 
 export const navLinks = [
@@ -75,38 +82,75 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "React Native",
+    icon: rn,
+  },
+  {
+    name: "NextJs",
+    icon: next,
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Chakra ui",
+    icon: chackra,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Graphql",
+    icon: graph,
+  },
+  {
+    name: "Apollo",
+    icon: apollo,
+  },
+  {
+    name: "React Query",
+    icon: query,
   },
   {
     name: "Three JS",
     icon: threejs,
   },
   {
+    name: "Babylon",
+    icon: babylon,
+  },
+  {
+    name: "nodejs",
+    icon: nodejs,
+  },
+  {
+    name: "express",
+    icon: express,
+  },
+  {
+    name: "socket",
+    icon: socket,
+  },
+  {
+    name: "grpc",
+    icon: grpc,
+  },
+  {
+    name: "prisma",
+    icon: prisma,
+  },
+  {
+    name: "python",
+    icon: python,
+  },
+  {
+    name: "django",
+    icon: django,
+  },
+  {
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
 ];
+
 
 const experiences = [
   {

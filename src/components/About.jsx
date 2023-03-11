@@ -1,6 +1,8 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -45,6 +47,21 @@ const ServiceCard = ({ index, title, icon, icon2 }) => (
   </Tilt>
 );
 
+const handleDragStart = (e) => e.preventDefault();
+
+const images = ["/d1.png", "/d2.png", "/d3.png"];
+
+const items = images.map((src, index) => (
+  <img
+    key={index}
+    src={src}
+    onDragStart={handleDragStart}
+    role="presentation"
+    className="object-cover"
+    style={{ filter: "grayscale(100%)" }}
+  />
+));
+
 const About = () => {
   return (
     <>
@@ -53,19 +70,31 @@ const About = () => {
         <h2 className={`${styles.sectionHeadText}`}>Overview.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I am an experienced software developer with expertise in TypeScript,
-        JavaScript, React, Next.js, and Node.js. I specialize in developing
-        efficient, scalable, and user-friendly solutions that solve real-world
-        problems. I have experience manipulating 3D scenes, developing frontend
-        applications, and building and maintaining Node.js applications. I am
-        proficient in implementing responsive design and ensuring cross-browser
-        compatibility, and I have strong collaboration skills. Let's work
-        together to create exceptional solutions that meet your needs.
-      </motion.p>
+      <div className="flex flex-wrap mt-5">
+        <div className="w-64 mr-7">
+          <AliceCarousel
+            items={items}
+            autoPlay
+            infinite
+            autoPlayInterval={2000}
+            disableDotsControls
+            disableButtonsControls
+          />
+        </div>
+
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        >
+          Hi my name is Diego Braga, I'm a passionate Brazilian software
+          developer based in Ireland with expertise in TypeScript, JavaScript,
+          React, Next.js, and Node.js. I specialize in developing efficient,
+          scalable, and user-friendly solutions that solve real-world problems.
+          I have experience manipulating 3D scenes with frameworks like
+          Babylonjs or ThreeJs, developing and creating automated tests for
+          frontend and backend applications.
+        </motion.p>
+      </div>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-evenly">
         {services.map((service, index) => (

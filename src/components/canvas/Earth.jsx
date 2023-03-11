@@ -1,22 +1,31 @@
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Preload } from "@react-three/drei";
+import { TextureLoader, SphereGeometry, MeshBasicMaterial, MeshStandardMaterial, DoubleSide } from "three";
 
 import CanvasLoader from "../Loader";
 
-const Earth = () => {
-  const earth = useGLTF("./planet/scene.gltf");
+const Sphere = () => {
+  const meshRef = React.useRef();
 
-  return (
-    <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
-  );
+  useFrame((state, delta) => {
+    meshRef.current.rotation.y += delta * 0.5;
+  });
+
+  const texture = new TextureLoader().load("/sun.jpeg");
+
+  const geometry = new SphereGeometry(2, 32, 32);
+  const material = new MeshBasicMaterial({ map: texture });
+  // const mesh = new Mesh(geometry, material);
+
+  return <mesh ref={meshRef} geometry={geometry} material={material} />;
 };
 
 const EarthCanvas = () => {
   return (
     <Canvas
       shadows
-      frameloop='demand'
+      frameloop="demand"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
@@ -33,7 +42,7 @@ const EarthCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth />
+        <Sphere />
 
         <Preload all />
       </Suspense>

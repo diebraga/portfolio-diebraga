@@ -12,7 +12,7 @@ const Sphere = () => {
     meshRef.current.rotation.y += delta * 0.5;
   });
 
-  const texture = new TextureLoader().load("/sun.jpeg");
+  const texture = new TextureLoader().load("/earth2.png");
 
   const geometry = new SphereGeometry(2, 32, 32);
   const material = new MeshBasicMaterial({ map: texture });

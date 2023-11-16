@@ -66,12 +66,13 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText}`}>Overview.</h2>
+        <p className={`${styles.sectionSubText} text-center sm:text-left`}>Introduction</p>
+        <h2 className={`${styles.sectionHeadText} text-center sm:text-left`}>Overview.</h2>
       </motion.div>
 
-      <div className="flex flex-wrap mt-5">
-        <div className="w-64 mr-7">
+      {/* Flex container for carousel and text */}
+      <div className="flex flex-wrap mt-5 sm:flex-col justify-center sm:justify-start">
+        <div className="w-64 mr-7 sm:mr-0 sm:mb-4">
           <AliceCarousel
             items={items}
             autoPlay
@@ -84,7 +85,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-center sm:text-left"
         >
           Hi my name is Diego Braga, I'm a passionate Brazilian software
           developer based in Ireland with expertise in TypeScript, JavaScript,
@@ -96,13 +97,17 @@ const About = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-10 justify-evenly">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
-      </div>
+      {/* Flex container for service cards */}
+      < div className="mt-20 flex flex-wrap gap-10 justify-evenly sm:justify-center" >
+        {
+          services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))
+        }
+      </div >
     </>
   );
 };
+
 
 export default SectionWrapper(About, "about");

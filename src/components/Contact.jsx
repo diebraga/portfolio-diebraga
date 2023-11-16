@@ -75,7 +75,20 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-        <form
+        <div className="contact-info">
+        <p className="text-xl pt-7 text-gray-600 dark:text-gray-300">
+  <a href="mailto:diebraga.developer@gmail.com" className="text-blue-500 hover:text-blue-700 transition duration-300">
+    diebraga.developer@gmail.com
+  </a>
+</p>
+<p className="text-3xl py-7 text-gray-600 dark:text-gray-300">
+  <a href="tel:+353833414052" className="text-blue-500 hover:text-blue-700 transition duration-300">
+    +353 833414052
+  </a>
+</p>
+
+    </div>
+        {/* <form
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
@@ -120,7 +133,7 @@ const Contact = () => {
           >
             {loading ? "Sending..." : "Send"}
           </button>
-        </form>
+        </form> */}
       </motion.div>
 
       <motion.div

@@ -8,6 +8,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import { Carousel } from "@material-tailwind/react";
 
 const ServiceCard = ({ index, title, icon, icon2 }) => (
   <Tilt className="xs:w-[250px] w-full">
@@ -52,48 +53,56 @@ const handleDragStart = (e) => e.preventDefault();
 const images = ["/d1.png", "/d2.png", "/d3.png"];
 
 const items = images.map((src, index) => (
-  <img
-    key={index}
-    src={src}
-    onDragStart={handleDragStart}
-    role="presentation"
-    className="object-cover"
-    style={{ filter: "grayscale(100%)" }}
-  />
+  <div className="w-full flex justify-center py-9">
+    <img
+      key={index}
+      src={src}
+      onDragStart={handleDragStart}
+      role="presentation"
+      className="object-cover w-72"
+      style={{ filter: "grayscale(100%)" }}
+    />
+  </div>
 ));
 
+function calculateYearsSince(dateString) {
+  const startDate = new Date(dateString);
+  const currentDate = new Date();
+
+  const differenceInTime = currentDate.getTime() - startDate.getTime();
+  const differenceInYears = differenceInTime / (1000 * 3600 * 24 * 365.25);
+
+  return Math.floor(differenceInYears);
+}
+
+const startDate = "2019-10-01";
 const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center sm:text-left`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText} text-center sm:text-left`}>Overview.</h2>
+        <p className={`${styles.sectionSubText} text-center`}>Introduction</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Overview.</h2>
       </motion.div>
 
       {/* Flex container for carousel and text */}
-      <div className="flex flex-wrap mt-5 sm:flex-col justify-center sm:justify-start">
-        <div className="w-64 mr-7 sm:mr-0 sm:mb-4">
-          <AliceCarousel
-            items={items}
-            autoPlay
-            infinite
-            autoPlayInterval={2000}
-            disableDotsControls
-            disableButtonsControls
-          />
-        </div>
+      <div className="flex flex-wrap mt-5 sm:flex-col justify-center items-center">
+        <div className="w-full">
 
+          <Carousel loop autoplay>
+
+            {items}
+
+          </Carousel>
+        </div>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-center sm:text-left"
+          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-center mx-auto"
         >
-          Hi my name is Diego Braga, I'm a passionate Brazilian software
-          developer based in Ireland with expertise in TypeScript, JavaScript,
-          React, Next.js, and Node.js. I specialize in developing efficient,
-          scalable, and user-friendly solutions that solve real-world problems.
-          I have experience manipulating 3D scenes with frameworks like
-          Babylonjs or ThreeJs, developing and creating automated tests for
-          frontend and backend applications.
+          <>
+            Hi, my name is Diego Braga, and I'm a passionate software
+            developer based in Ireland with expertise in TypeScript, JavaScript,
+            React, Next.js, and Node.js. I have over {calculateYearsSince(startDate)} years of industry experience.
+          </>
         </motion.p>
       </div>
 

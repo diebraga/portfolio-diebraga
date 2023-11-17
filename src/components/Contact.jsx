@@ -75,65 +75,27 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-        <div className="contact-info">
-        <p className="text-xl pt-7 text-gray-600 dark:text-gray-300">
-  <a href="mailto:diebraga.developer@gmail.com" className="text-blue-500 hover:text-blue-700 transition duration-300">
-    diebraga.developer@gmail.com
-  </a>
-</p>
-<p className="text-3xl py-7 text-gray-600 dark:text-gray-300">
-  <a href="tel:+353833414052" className="text-blue-500 hover:text-blue-700 transition duration-300">
-    +353 833414052
-  </a>
-</p>
 
-    </div>
-        {/* <form
+        <form
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your name?"
-              className="bg-tertiary bg-opacity-50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your email?"
-              className="bg-tertiary bg-opacity-50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
-            <textarea
-              rows={7}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What you want to say?"
-              className="bg-tertiary bg-opacity-50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
+          <div className="contact-info">
+            <p className="text-xl pt-7 text-gray-600 dark:text-gray-300">
+              <a href="mailto:diebraga.developer@gmail.com" className="text-blue-500 hover:text-blue-700 transition duration-300">
+                diebraga.developer@gmail.com
+              </a>
+            </p>
+            <p className="text-3xl py-7 text-gray-600 dark:text-gray-300">
+              <a href="tel:+353833414052" className="text-blue-500 hover:text-blue-700 transition duration-300">
+                +353 833414052
+              </a>
+            </p>
 
-          <button
-            type="submit"
-            className="bg-tertiary bg-opacity-50 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </form> */}
+          </div>
+
+        </form>
       </motion.div>
 
       <motion.div

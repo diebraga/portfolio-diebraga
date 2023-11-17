@@ -209,6 +209,14 @@ const testimonials = [
   },
   {
     testimonial:
+      "Diego is one of the most talented and dedicated developers I had the pleasure of working with.",
+    name: "Hudson Teixeira",
+    designation: "Software Developer and Data Scientist",
+    company: "",
+    image: "/hud.jpeg",
+  },
+  {
+    testimonial:
       "Diego's contributions to the microfrontend team have been vital to our business, significantly enhancing both our web and mobile deliveries.",
     name: "Sebastian Karolkiewicz",
     designation: "Senior Director Software Development at Hertz",

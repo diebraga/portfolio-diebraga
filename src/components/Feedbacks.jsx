@@ -5,6 +5,8 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
+import { useIsMobile } from "../hooks/useIsMobile";
+import { Carousel } from "@material-tailwind/react";
 
 const FeedbackCard = ({
   index,
@@ -16,7 +18,7 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-    className="bg-gradient-to-r from-blue-500 to-pink-500 p-0.5 rounded-3xl xs:w-[320px] w-full shadow-card"
+    className="bg-gradient-to-r from-blue-500 to-purple-500 p-0.5 rounded-3xl xs:w-[320px] w-full shadow-card"
   >
     <div
       options={{
@@ -61,6 +63,8 @@ const FeedbackCard = ({
 );
 
 const Feedbacks = () => {
+  const { isMobileView } = useIsMobile()
+
   return (
     <div className={`mt-12 rounded-[20px]`}>
       <div className={`rounded-2xl ${styles.padding} min-h-[300px]`}>
@@ -70,9 +74,26 @@ const Feedbacks = () => {
         </motion.div>
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
+        {isMobileView ? (
+          <Carousel autoplay loop>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="w-full flex justify-center py-9">
+                <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+
+              </div>
+            ))}
+          </Carousel>
+        ) : (
+          <Carousel autoplay loop>
+            {Array.from({ length: Math.ceil(testimonials.length / 2) }, (_, i) => (
+              <div key={i} className="w-full flex justify-evenly py-9">
+                {testimonials.slice(i * 2, i * 2 + 2).map((testimonial, index) => (
+                  <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+                ))}
+              </div>
+            ))}
+          </Carousel>
+        )}
       </div>
     </div>
   );

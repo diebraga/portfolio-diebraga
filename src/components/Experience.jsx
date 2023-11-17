@@ -11,6 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -23,8 +24,9 @@ const ExperienceCard = ({ experience }) => {
       contentArrowStyle={{ borderRight: "7px solid  #fff" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
+      className=""
       icon={
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center w-full h-full ">
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -33,7 +35,7 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
+      <div className="">
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
         <p
           className="text-secondary text-[16px] font-semibold"
@@ -58,6 +60,8 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { isMobileView } = useIsMobile()
+
   return (
     <>
       <motion.div variants={textVariant()}>

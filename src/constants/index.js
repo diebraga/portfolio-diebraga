@@ -233,7 +233,7 @@ const projects = [
       },
       {
         name: "tailwind",
-        color: "pink-text-gradient",
+        color: "purple-text-gradient",
       },
     ],
     image: carrent,
@@ -254,7 +254,7 @@ const projects = [
       },
       {
         name: "scss",
-        color: "pink-text-gradient",
+        color: "purple-text-gradient",
       },
     ],
     image: jobit,
@@ -275,7 +275,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "pink-text-gradient",
+        color: "purple-text-gradient",
       },
     ],
     image: tripguide,

@@ -14,7 +14,7 @@ const Sphere = () => {
 
   const texture = new TextureLoader().load("/earth2.png");
 
-  const geometry = new SphereGeometry(2, 32, 32);
+  const geometry = new SphereGeometry(3, 32, 32);
   const material = new MeshBasicMaterial({ map: texture });
   // const mesh = new Mesh(geometry, material);
 

@@ -23,7 +23,7 @@ const ProjectCard = ({
     <div className="xs:w-[350px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] rounded-[20px] shadow-card float-left mr-10 mb-10"
+        className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"
         style={{ position: "relative" }}
       >
         <div
@@ -84,42 +84,42 @@ const Works = () => {
       tags: ["OpenCv", "Python", "React", "FastApi"],
     },
     {
-      description: "A Deep Learning app that predicts if the probability of the inputed image to be a Dog a Cat or other, It use FastAI machine learning libraries and FastApi.",
+      description: "FastAi app predicts the probability of image to be a Dog a Cat.",
       name: "Image Classification",
       image: "https://user-images.githubusercontent.com/52054459/224771687-2ed97135-8669-4775-a81b-e1097fd26500.gif",
       source_code_link: "https://github.com/diebraga/image_classification_machine_learning",
       tags: ["FastAi", "Python", "React", "FastApi"],
     },
     {
-      description: "Starter NextJs app that simulates Google Street View functionalities with NextJS React-Three-Fiber and Drei.",
+      description: "NextJs app simulates Google Street View functionalities with R3F.",
       name: "Tour View",
       image: "https://user-images.githubusercontent.com/52054459/224830831-78c14202-3f59-4d2e-bd11-b0a0abab0d05.gif",
       source_code_link: "https://github.com/diebraga/tour_view",
       tags: ["NextJS", "ThreeJs"],
     },
     {
-      description: "A Starter NextJS App that renders a scene with a third person camera using BabylonJs framework.",
-      name: "BabylonJS with NextJS Starter",
+      description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
+      name: "BabylonJS & NextJS",
       image: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
       source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
       tags: ["NextJS", "BabylonJS"],
     },
     {
-      description: "A Simple realtime chat room with nextJs in the frontend Nodejs Express and SocketIo framework.",
+      description: "Simple realtime chat room with NextJs Nodejs Express and socketIo.",
       name: "Realtime Chatroom",
       image: "https://user-images.githubusercontent.com/52054459/224837848-912a5bd1-2fa0-47bd-8d59-78437d3eea98.gif",
       source_code_link: "https://github.com/diebraga/simple_chatroom_app",
       tags: ["NodeJS", "SocketIO", "React"],
     },
     {
-      description: "A Geography game with two modalities: guess countries or guess countries flags divided by continent, using Nextjs and ChakraUI.",
+      description: "Geography game guess countries or flags using Nextjs and ChakraUI.",
       name: "GeoGuessWorld",
       image: "https://user-images.githubusercontent.com/52054459/224839866-2b382fd5-fe92-4c30-a8d0-f656de87e3ba.gif",
       source_code_link: "https://github.com/diebraga/GuessGeoWorld",
       tags: ["NextJS", "ChakraUI"],
     },
     {
-      description: "A Shopping cart built with Nextjs, Stitches and a serverless API route that creates a Stripe checkout.",
+      description: "Shopping cart in with Nextjs, using api routes and stripe checkout.",
       name: "Stripe Shop",
       image: "https://user-images.githubusercontent.com/52054459/200176756-f34c8511-841b-42aa-b1b7-0d2829a9bdd5.png",
       source_code_link: "https://github.com/diebraga/ignite_shop_2022",

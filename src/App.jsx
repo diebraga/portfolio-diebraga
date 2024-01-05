@@ -48,12 +48,12 @@ const App = () => {
           <Button
             variant="outlined"
             color="white"
-            className="shadow-xl shadow-white-300/50 text-white border-white border-4 flex items-center gap-2"
+            className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-4 flex items-center gap-2"
           >
             <span className="md:text-lg text-sm">
               Get In Touch
             </span>
-            <IoArrowForward color="white" size={24} className="align-middle" />
+            <IoArrowForward size={24} className="align-middle text-purple-100" />
           </Button>
         </a>
       </footer>

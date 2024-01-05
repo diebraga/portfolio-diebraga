@@ -18,7 +18,7 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-    className="bg-gradient-to-r from-blue-500 to-purple-500 p-0.5 rounded-3xl xs:w-[320px] w-full shadow-card mb-14"
+    className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl p-0.5 xs:w-[320px] w-full mb-14"
   >
     <div
       options={{

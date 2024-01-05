@@ -12,7 +12,7 @@ const ServiceCard = ({ index, title, icon, icon2 }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] rounded-[20px] shadow-card float-left mr-10 mb-10"
+      className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"
       style={{ position: "relative" }}
     >
       <div
@@ -98,7 +98,7 @@ const About = () => {
           <>
             Hi, my name is Diego Braga, and I'm a passionate software
             developer based in Ireland with expertise in TypeScript, JavaScript,
-            React, Next.js, and Node.js. I have over {calculateYearsSince(startDate)} years of industry experience.
+            React, Next.js, and Node.js. I have over {calculateYearsSince(startDate)} years of industry experience building amazing experiences ✨.
           </>
         </motion.p>
       </div>

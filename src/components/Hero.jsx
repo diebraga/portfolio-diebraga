@@ -19,16 +19,12 @@ const Hero = ({startSound,pauseSound}) => {
       >
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            <span>Hi,</span> I'm{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-              Diego
-
+              Diego Braga
             </span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I create awesome mobile applications
-            <br className="sm:block hidden" />
-            and build cool things for the web. ✨ 😀
+          <p className={`text-xl text-white-100`}>
+            Fullstack Web Developer
           </p>
         </div>
       </div>

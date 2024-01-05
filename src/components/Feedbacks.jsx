@@ -66,7 +66,7 @@ const Feedbacks = () => {
   const { isMobileView } = useIsMobile()
 
   return (
-    <div className={`mt-12 rounded-[20px]`}>
+    <div className={` rounded-[20px]`}>
       <div className={`rounded-2xl ${styles.padding} min-h-[300px]`}>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>

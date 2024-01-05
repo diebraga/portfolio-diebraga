@@ -1,8 +1,6 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
 
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -54,14 +52,16 @@ const images = ["/d1.png", "/d2.png", "/d3.png"];
 
 const items = images.map((src, index) => (
   <div className="w-full flex justify-center py-9">
+    <div className="rounded-lg shadow-card">
     <img
       key={index}
       src={src}
       onDragStart={handleDragStart}
       role="presentation"
-      className="object-cover w-72"
-      style={{ filter: "grayscale(100%)" }}
+      className="object-cover w-72 rounded-lg"
+      style={{ filter: "grayscale(100%)"}} 
     />
+    </div>
   </div>
 ));
 

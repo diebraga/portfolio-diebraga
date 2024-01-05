@@ -60,8 +60,6 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  const { isMobileView } = useIsMobile()
-
   return (
     <>
       <motion.div variants={textVariant()}>

@@ -10,7 +10,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 .hash-span {
@@ -23,7 +22,7 @@
   box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
+  background: #0b0013; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #434343,

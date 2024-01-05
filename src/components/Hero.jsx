@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
-
+import { Button } from "@material-tailwind/react";
 import { styles } from "../styles";
 
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
+     <video
+        autoPlay
+        muted
+        loop
+        className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-[-1] object-cover"
+      >
+        <source src="/blackhole.webm" type="video/webm" />
+      </video>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -13,6 +21,7 @@ const Hero = () => {
             <span>Hi,</span> I'm{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Diego
+
             </span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
@@ -27,21 +36,13 @@ const Hero = () => {
         className="absolute bottom-10 xs:bottom-32 w-full flex justify-center items-center"
         style={{ height: "100px" }}
       >
-        <motion.div
-          animate={{
-            y: [0, 24, 0],
-            backgroundColor: ["#3182CE", "#FBB6CE", "#3182CE"],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            repeatType: "loop",
-          }}
-          className="w-10 h-10 rounded-full bg-blue-500 mb-1 flex justify-center items-center"
+        <Button
+          variant="outlined"
+          color="deep-purple"
+          className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-4"
         >
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVR4nO3VsQqDMBSF4V8HaUeHFlwKPk/3PnVpoVNBCq4OrnG0FFRCaahek4BwD5wlBD5uuBDYYPKhSSzwDDRAP7QFLjHgl4XaePDJzQ/4073CvmP0qdHlChSjy4Uu15aXK7E+/LGdAy6+7qVr4LsDmdMK2Emnva6EM+nEB+AhQGuglKJS3Au6FPeKzsWDoP/woKgLj4KOOQI34AmcplMN7rwBpHe69fpSsh4AAAAASUVORK5CYII=" />
-
-        </motion.div>
+          <strong>View Portfolio</strong>
+        </Button>
       </a>
 
     </section>

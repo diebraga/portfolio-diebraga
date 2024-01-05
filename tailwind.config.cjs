@@ -22,7 +22,7 @@ module.exports = withMT({
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/sphere2.gif')",
+        // "hero-pattern": "url('/sphere2.gif')",
       },
     },
   },

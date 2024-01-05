@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { Button } from "@material-tailwind/react";
 import { styles } from "../styles";
 
-const Hero = () => {
+const Hero = ({startSound,pauseSound}) => {
+  
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className={`relative w-full h-screen mx-auto mb-6`}>
      <video
         autoPlay
         muted
@@ -39,7 +40,8 @@ const Hero = () => {
         <Button
           variant="outlined"
           color="deep-purple"
-          className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-4"
+          className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-4 mt-16"
+          onClick={startSound}
         >
           <strong>View Portfolio</strong>
         </Button>

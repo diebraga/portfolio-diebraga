@@ -2,6 +2,7 @@ import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
+
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 
@@ -11,20 +12,21 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { useIsMobile } from "../hooks/useIsMobile";
 
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
         background: "#000",
-        border: "1px solid white",
-        borderBottom: 0,
+        border: "1px solid #40046e",
+        borderBottom: 0
       }}
+      
       contentArrowStyle={{ borderRight: "7px solid  #fff" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
-      className=""
+      // className="animate-ping"
+      
       icon={
         <div className="flex justify-center items-center w-full h-full ">
           <img
@@ -34,6 +36,7 @@ const ExperienceCard = ({ experience }) => {
           />
         </div>
       }
+      
     >
       <div className="">
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
@@ -60,6 +63,7 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -72,7 +76,7 @@ const Experience = () => {
       </motion.div>
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="#40046e">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

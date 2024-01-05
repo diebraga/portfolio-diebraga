@@ -51,16 +51,16 @@ const handleDragStart = (e) => e.preventDefault();
 const images = ["/d1.png", "/d2.png", "/d3.png"];
 
 const items = images.map((src, index) => (
-  <div className="w-full flex justify-center py-9">
-    <div className="rounded-lg shadow-card">
-    <img
-      key={index}
-      src={src}
-      onDragStart={handleDragStart}
-      role="presentation"
-      className="object-cover w-72 rounded-lg"
-      style={{ filter: "grayscale(100%)"}} 
-    />
+  <div className="w-full flex justify-center py-9 pb-20">
+    <div className=" shadow-purple-200/50 rounded-lg shadow-card">
+      <img
+        key={index}
+        src={src}
+        onDragStart={handleDragStart}
+        role="presentation"
+        className="object-cover w-72 rounded-lg" 
+        style={{ filter: "grayscale(100%)"}} 
+      />
     </div>
   </div>
 ));
@@ -81,17 +81,14 @@ const About = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>Overview.</h2>
+        <h2 className={`${styles.sectionHeadText} text-center`}>Overview</h2>
       </motion.div>
 
       {/* Flex container for carousel and text */}
       <div className="flex flex-wrap mt-5 sm:flex-col justify-center items-center">
         <div className="w-full">
-
           <Carousel loop autoplay>
-
             {items}
-
           </Carousel>
         </div>
         <motion.p

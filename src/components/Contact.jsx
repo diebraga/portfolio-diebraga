@@ -12,7 +12,7 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 h-[350px] cursor-pointer"
+        className="xl:flex-1 h-[350px] cursor-grab"
       >
         <EarthCanvas />
       </motion.div>

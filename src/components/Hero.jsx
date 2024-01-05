@@ -39,7 +39,7 @@ const Hero = () => {
         <Button
           variant="outlined"
           color="deep-purple"
-          className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-4"
+          className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-4"
         >
           <strong>View Portfolio</strong>
         </Button>

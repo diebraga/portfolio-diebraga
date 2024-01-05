@@ -11,7 +11,7 @@ const Tech = () => {
           initial="hidden"
           animate="visible"
           custom={index}
-          className="w-24 h-24 rounded-full bg-white p-4 cursor-pointer"
+          className="w-24 h-24 rounded-full bg-white p-4"
           whileHover={{ rotate: [0, -5, 5, -5, 5, 0] }}
         >
           <img src={technology.icon} className="w-full h-full object-contain" />

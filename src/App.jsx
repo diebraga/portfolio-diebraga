@@ -58,13 +58,13 @@ const App = () => {
         </a>
       </footer>
       {isMuted && (
-              <button className="fixed bottom-6 right-8 bg-black p-3 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={startSound}>
-             <VscMute size={25}/>
+              <button className="fixed bottom-3 right-3 md:bottom-6 md:right-8 bg-black p-2 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={startSound}>
+             <VscMute className="text-lg"/>
             </button>      
       )}
         {!isMuted && (
-              <button className="fixed bottom-6 right-8 bg-black p-3 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={pauseSound}>
-             <VscUnmute size={25}/>
+              <button className="fixed bottom-3 right-3 md:bottom-6 md:right-8 bg-black p-2 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={pauseSound}>
+             <VscUnmute className="text-lg"/>
             </button>      
       )}
     </BrowserRouter>

@@ -23,8 +23,8 @@ const Hero = ({startSound,pauseSound}) => {
               Diego Braga
             </span>
           </h1>
-          <p className={`text-xl text-white-100`}>
-            Fullstack Web Developer
+          <p className={`text-lg md:text-xl text-white-100`}>
+            Fullstack Developer
           </p>
         </div>
       </div>

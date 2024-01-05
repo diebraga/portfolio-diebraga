@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { Carousel } from "@material-tailwind/react";
 
 const ServiceCard = ({ index, title, icon, icon2 }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt className="w-[250px]">
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"

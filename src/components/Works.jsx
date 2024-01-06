@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Tilt from "react-tilt";
+import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -7,7 +7,7 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import { Carousel } from "@material-tailwind/react";
+import { Button, Carousel } from "@material-tailwind/react";
 import { useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
 
@@ -32,25 +32,27 @@ const ProjectCard = ({
             scale: 1,
             speed: 450,
           }}
-          className="bg-black rounded-[20px] min-h-[360px] px-5 py-4 cursor-pointer"
-          onClick={() => window.open(source_code_link, "_blank")}
+          className="bg-black rounded-[20px] min-h-[360px] px-5 py-4r"
+          
         >
-          <div className="relative w-full h-[230px]">
+          <div className="relative w-full h-[230px] mt-3">
             <img
               src={image}
               alt="project_image"
               className="w-full h-full object-cover rounded-2xl"
             />
-
-       
           </div>
 
           <div className="mt-5">
             <h3 className="text-white font-bold text-[24px]">{name}</h3>
             <p className="mt-2 text-secondary text-[14px]">{description}</p>
           </div>
+          <Button onClick={() => window.open(source_code_link, "_blank")} className="mb-3 mt-1 w-full flex items-center gap-2 justify-center">
+            View on github
+            <FaGithub  className="text-lg"/>
+          </Button>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="my-3 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <p
                 key={`${name}-${tag.name}`}

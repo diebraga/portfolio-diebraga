@@ -3,12 +3,16 @@ import { IoArrowForward } from "react-icons/io5";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
-import { Button, IconButton } from "@material-tailwind/react";
-import { useState, useRef } from "react";
+import { Button } from "@material-tailwind/react";
+import { useState, useRef, useEffect } from "react";
 
 const App = () => {
   const soundRef = useRef(null)
   const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function startSound() {
     soundRef.current?.play()
@@ -47,13 +51,12 @@ const App = () => {
         <a href="mailto:diebraga.devolper@gmail.com">
           <Button
             variant="outlined"
-            color="white"
             className="animate-pulse shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-4 flex items-center gap-2"
           >
-            <span className="md:text-lg text-sm">
+            <strong className="">
               Get In Touch
-            </span>
-            <IoArrowForward size={24} className="align-middle text-purple-100" />
+            </strong>
+            <IoArrowForward size={20} className="align-middle text-purple-100" />
           </Button>
         </a>
       </footer>

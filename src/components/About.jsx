@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -7,8 +7,48 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Carousel } from "@material-tailwind/react";
 
-const ServiceCard = ({ index, title, icon, icon2 }) => (
-  <div className="w-[250px]">
+const RotatingImage = ({ src, alt }) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const rotationAnimation = {
+    rotate: isHovering ? Infinity : 0,
+    transition: {
+      duration: 2,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "loop"
+    }
+  };
+
+  return (
+    <motion.img
+      src={src}
+      alt={alt}
+      className="w-16 h-16 object-contain"
+      animate={rotationAnimation}
+      onHoverStart={() => setIsHovering(true)}
+      onHoverEnd={() => setIsHovering(false)}
+    />
+  );
+};
+
+const ServiceCard = ({ index, title, icon, icon2 }) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const rotateAnimation = {
+    rotate: isHovering ? 360 : 0,
+    transition: {
+      duration: 2,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "loop"
+    }
+  };
+
+  return(
+  <div className="w-[250px]"
+    onMouseEnter={() => setIsHovering(true)} 
+  >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"
@@ -23,13 +63,15 @@ const ServiceCard = ({ index, title, icon, icon2 }) => (
         className="bg-black rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
       >
         <div style={{ display: "flex" }}>
-          <img
+          <motion.img
+            animate={rotateAnimation}
             src={icon}
             alt="web-development"
             className="w-16 h-16 object-contain"
           />
           {icon2 && (
-            <img
+            <motion.img
+              animate={rotateAnimation}
               src={icon2}
               alt="web-development"
               className="w-16 h-16 object-contain"
@@ -43,7 +85,7 @@ const ServiceCard = ({ index, title, icon, icon2 }) => (
       </div>
     </motion.div>
   </div>
-);
+)};
 
 const handleDragStart = (e) => e.preventDefault();
 

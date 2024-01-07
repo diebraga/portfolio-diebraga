@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Button, Carousel } from "@material-tailwind/react";
-import { useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
+import ArrowButton from "./ArrowButton";
 
 const ProjectCard = ({
   index,
@@ -20,7 +17,7 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <div className="xs:w-[350px] w-full">
+    <div className="xs:w-[350px] w-full mb-8">
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
         className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"
@@ -33,7 +30,6 @@ const ProjectCard = ({
             speed: 450,
           }}
           className="bg-black rounded-[20px] min-h-[360px] px-5 py-4r"
-          
         >
           <div className="relative w-full h-[230px] mt-3">
             <img
@@ -83,14 +79,14 @@ const Works = () => {
       name: "Facial Recognition",
       image: "https://user-images.githubusercontent.com/52054459/225896553-f9cef9b9-26ff-43d6-affc-8448e812eac1.png",
       source_code_link: "https://github.com/diebraga/facial_recognition",
-      tags: ["OpenCv", "Python", "React", "FastApi"],
+      tags: ["OpenCv", "Python", "FastApi"],
     },
     {
       description: "FastAi app predicts the probability of image to be a Dog a Cat.",
       name: "Image Classification",
       image: "https://user-images.githubusercontent.com/52054459/224771687-2ed97135-8669-4775-a81b-e1097fd26500.gif",
       source_code_link: "https://github.com/diebraga/image_classification_machine_learning",
-      tags: ["FastAi", "Python", "React", "FastApi"],
+      tags: ["FastAi", "Python", "FastApi"],
     },
     {
       description: "NextJs app simulates Google Street View functionalities with R3F.",
@@ -145,9 +141,18 @@ const Works = () => {
       </div>
 
       {isMobileView ? (
-        <Carousel autoplay loop>
+        <Carousel 
+          autoplay 
+          loop
+          prevArrow={({ handlePrev }) => (
+            <ArrowButton handlePrev={handlePrev}/>
+          )}
+          nextArrow={({ handleNext }) => (
+            <ArrowButton handleNext={handleNext}/>
+          )}            
+        >
           {projects.map((project, index) => (
-            <div key={index} className="w-full flex justify-center py-9">
+            <div key={index} className="w-full flex justify-center py-9 px-2">
               <ProjectCard
                 index={index}
                 description={project.description}
@@ -160,9 +165,18 @@ const Works = () => {
           ))}
         </Carousel>
       ) : (
-        <Carousel autoplay loop>
+        <Carousel 
+          autoplay 
+          loop
+          prevArrow={({ handlePrev }) => (
+            <ArrowButton handlePrev={handlePrev}/>
+          )}
+          nextArrow={({ handleNext }) => (
+            <ArrowButton handleNext={handleNext}/>
+          )}            
+        >
           {Array.from({ length: Math.ceil(projects.length / 2) }, (_, i) => (
-            <div key={i} className="w-full flex justify-evenly py-9">
+            <div key={i} className="w-full flex justify-evenly py-9 px-2">
               {projects.slice(i * 2, i * 2 + 2).map((project, index) => (
                 <ProjectCard
                   key={index}

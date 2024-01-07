@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { Carousel } from "@material-tailwind/react";
+import ArrowButton from "./ArrowButton";
 
 const FeedbackCard = ({
   index,
@@ -52,14 +52,6 @@ const FeedbackCard = ({
       </div>
     </div>
   </motion.div>
-  //   <motion.div
-  //   variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-  //   className="w-full bg-gradient-to-r from-blue-500 to-pink-500 p-[1px] rounded-[20px] shadow-card float-left mr-10 mb-10"
-  //   style={{ position: "relative" }}
-  // >
-
-  //   </div>
-  // </motion.div>
 );
 
 const Feedbacks = () => {
@@ -73,18 +65,35 @@ const Feedbacks = () => {
           <h2 className={styles.sectionHeadText}>Testimonials.</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
+      <div className={`mt-10 ${styles.paddingX} flex flex-wrap gap-7`}>
         {isMobileView ? (
-          <Carousel autoplay loop>
+          <Carousel 
+            autoplay 
+            loop
+            prevArrow={({ handlePrev }) => (
+              <ArrowButton handlePrev={handlePrev}/>
+            )}
+            nextArrow={({ handleNext }) => (
+              <ArrowButton handleNext={handleNext}/>
+            )}            
+          >
             {testimonials.map((testimonial, index) => (
               <div key={index} className="w-full flex justify-center py-9">
                 <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-
               </div>
             ))}
           </Carousel>
         ) : (
-          <Carousel autoplay loop>
+          <Carousel 
+            autoplay 
+            loop
+            prevArrow={({ handlePrev }) => (
+              <ArrowButton handlePrev={handlePrev}/>
+            )}
+            nextArrow={({ handleNext }) => (
+              <ArrowButton handleNext={handleNext}/>
+            )}                        
+          >
             {Array.from({ length: Math.ceil(testimonials.length / 2) }, (_, i) => (
               <div key={i} className="w-full flex justify-evenly py-9">
                 {testimonials.slice(i * 2, i * 2 + 2).map((testimonial, index) => (

@@ -61,7 +61,7 @@ const App = () => {
         </a>
       </footer>
       {isMuted && (
-              <button className="fixed bottom-3 right-3 md:bottom-6 md:right-8 bg-black p-2 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={startSound}>
+            <button className="fixed bottom-3 right-3 md:bottom-6 md:right-8 bg-black p-2 shadow-xl shadow-purple-300/50 text-purple-100 border-purple-200 border-2 rounded-lg" onClick={startSound}>
              <VscMute className="text-lg"/>
             </button>      
       )}

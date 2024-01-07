@@ -1,36 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Carousel } from "@material-tailwind/react";
-
-const RotatingImage = ({ src, alt }) => {
-  const [isHovering, setIsHovering] = useState(false);
-
-  const rotationAnimation = {
-    rotate: isHovering ? Infinity : 0,
-    transition: {
-      duration: 2,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "loop"
-    }
-  };
-
-  return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className="w-16 h-16 object-contain"
-      animate={rotationAnimation}
-      onHoverStart={() => setIsHovering(true)}
-      onHoverEnd={() => setIsHovering(false)}
-    />
-  );
-};
+import ArrowButton from "./ArrowButton";
 
 const ServiceCard = ({ index, title, icon, icon2 }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -128,7 +103,16 @@ const About = () => {
       {/* Flex container for carousel and text */}
       <div className="flex flex-wrap mt-5 sm:flex-col justify-center items-center">
         <div className="w-full">
-          <Carousel loop autoplay>
+          <Carousel 
+            loop 
+            autoplay
+            prevArrow={({ handlePrev }) => (
+              <ArrowButton handlePrev={handlePrev}/>
+            )}
+            nextArrow={({ handleNext }) => (
+              <ArrowButton handleNext={handleNext}/>
+            )}            
+          >
             {items}
           </Carousel>
         </div>

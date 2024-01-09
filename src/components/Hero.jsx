@@ -1,16 +1,23 @@
-import { motion } from "framer-motion";
 import { Button } from "@material-tailwind/react";
 import { styles } from "../styles";
+import { useState } from "react";
 
-const Hero = ({startSound,pauseSound}) => {
-  
+const Hero = ({startSound}) => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <section className={`relative w-full h-screen mx-auto mb-6`}>
+      {!videoLoaded && (
+        <div class="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
+          <div class="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
+        </div>      
+      )}
      <video
         autoPlay
         muted
         loop
         className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-[-1] object-cover"
+        onLoadedData={() => setVideoLoaded(true)}
       >
         <source src="/blackhole.webm" type="video/webm" />
       </video>

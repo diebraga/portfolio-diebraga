@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -19,7 +19,8 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#000",
         border: "1px solid #40046e",
-        borderBottom: 0
+        borderBottom: 0,
+        color: 'white'
       }}
       
       contentArrowStyle={{ borderRight: "7px solid  #fff" }}
@@ -28,7 +29,7 @@ const ExperienceCard = ({ experience }) => {
       // className="animate-ping"
       
       icon={
-        <div className="flex justify-center items-center w-full h-full ">
+        <div className="flex justify-center items-center w-full h-full">
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -63,7 +64,8 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
-  
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -74,6 +76,20 @@ const Experience = () => {
           Work Experience
         </h2>
       </motion.div>
+      {!videoLoaded && (
+        <div class="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
+          <div class="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
+        </div>      
+      )}
+      <video
+        autoPlay
+        muted
+        loop
+        className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[2000px] z-[-1] object-cover"
+        onLoadedData={() => setVideoLoaded(true)}
+      >
+        <source src="/atomic.mp4" type="video/mp4" />
+      </video>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#40046e">

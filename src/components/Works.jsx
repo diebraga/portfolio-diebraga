@@ -117,6 +117,13 @@ const Works = () => {
       tags: ["NextJS", "ChakraUI"],
     },
     {
+      description: "Web 3 app that sends ETH txs to addresses and stores in the blockchain",
+      name: "Web3 Transactions",
+      image: "https://github.com/diebraga/web-3-transactions/assets/52054459/012e6140-04f8-4202-b902-0a9ebdcbfda0",
+      source_code_link: "https://github.com/diebraga/web-3-transactions",
+      tags: ["Vite", "Solidity", "Tailwind"],
+    },
+    {
       description: "Shopping cart in with Nextjs, using api routes and stripe checkout.",
       name: "Stripe Shop",
       image: "https://user-images.githubusercontent.com/52054459/200176756-f34c8511-841b-42aa-b1b7-0d2829a9bdd5.png",
@@ -137,7 +144,8 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          These projects are a testament to my passion for technology and innovation, highlighting my skills through personal projects that I undertake for enjoyment. Each one is a unique creation, showcasing not just my technical abilities, but also my creativity and enthusiasm for exploring new ideas. You'll find brief descriptions of these projects along with links to their code repositories and live demonstrations. These personal endeavors reflect my ability to engage with complex challenges, experiment with diverse technologies, and bring my imaginative concepts to life.        </motion.p>
+            My projects highlight my technical skills, creativity, and passion for technology. Each showcases unique challenges and innovative solutions, complete with summaries, code repositories, and live demos. They demonstrate my ability to experiment with new technologies and realize imaginative ideas. ⚛️ 
+        </motion.p>
       </div>
 
       {isMobileView ? (

@@ -96,8 +96,15 @@ const Works = () => {
       tags: ["NextJS", "ThreeJs"],
     },
     {
+      description: "NextJS Web 3 app where you store your ideas in the blockchain.",
+      name: "My Ideas",
+      image: "https://github.com/diebraga/my-ideas/assets/52054459/8f0f81ee-a84d-4e36-9b86-2ab6431b0ea9",
+      source_code_link: "https://github.com/diebraga/my-ideas",
+      tags: ["NextJS", "Soliditey", "Hardhat"],
+    },
+    {
       description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
-      name: "BabylonJS & NextJS",
+      name: "My Ideas",
       image: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
       source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
       tags: ["NextJS", "BabylonJS"],

@@ -104,7 +104,7 @@ const Works = () => {
     },
     {
       description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
-      name: "My Ideas",
+      name: "BabylonJS Starter",
       image: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
       source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
       tags: ["NextJS", "BabylonJS"],

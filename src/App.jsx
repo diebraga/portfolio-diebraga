@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { IoArrowForward } from "react-icons/io5";
 import { VscUnmute, VscMute } from "react-icons/vsc";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import { Button } from "@material-tailwind/react";
 import { useState, useRef, useEffect } from "react";
 

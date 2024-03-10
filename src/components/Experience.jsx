@@ -77,8 +77,8 @@ const Experience = () => {
         </h2>
       </motion.div>
       {!videoLoaded && (
-        <div class="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
-          <div class="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
+        <div className="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
+          <div className="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
         </div>      
       )}
 <video

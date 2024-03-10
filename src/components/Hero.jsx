@@ -1,15 +1,27 @@
 import { Button } from "@material-tailwind/react";
 import { styles } from "../styles";
 import { useState } from "react";
+import { TypewriterEffectSmooth } from "./TypeWritterEffect";
 
 const Hero = ({startSound}) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
+  const words = [
+    {
+      text: "Fullstack",
+      className: "text-lg md:text-xl text-white-100"
+    },
+    {
+      text: "Developer",
+      className: "text-lg md:text-xl text-white-100"
+    },
+  ];
+
   return (
     <section className={`relative w-full h-screen mx-auto mb-6`}>
       {!videoLoaded && (
-        <div class="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
-          <div class="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
+        <div className="fixed inset-0 bg-[#0b0013] flex justify-center items-center">
+          <div className="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
         </div>      
       )}
      <video
@@ -30,9 +42,8 @@ const Hero = ({startSound}) => {
               Diego Braga
             </span>
           </h1>
-          <p className={`text-lg md:text-xl text-white-100`}>
-            Fullstack Developer
-          </p>
+          <TypewriterEffectSmooth words={words} />
+
         </div>
       </div>
       <a

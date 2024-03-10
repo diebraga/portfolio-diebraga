@@ -26,7 +26,7 @@ import {
   express,
   prisma,
   socket,
-  grpc
+  grpc,
 } from "../assets";
 
 export const navLinks = [
@@ -38,10 +38,10 @@ export const navLinks = [
     id: "work",
     title: "Work",
   },
-  {
-    id: "feedbacks",
-    title: "Feedbacks",
-  },
+  // {
+  //   id: "feedbacks",
+  //   title: "Feedbacks",
+  // },
   {
     id: "contact",
     title: "Contact",
@@ -154,7 +154,6 @@ const technologies = [
     icon: git,
   },
 ];
-
 
 const experiences = [
   {

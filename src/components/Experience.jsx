@@ -81,15 +81,15 @@ const Experience = () => {
           <div class="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
         </div>      
       )}
-      <video
-        autoPlay
-        muted
-        loop
-        className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[2000px] z-[-1] object-cover"
-        onLoadedData={() => setVideoLoaded(true)}
-      >
-        <source src="/atomic.mp4" type="video/mp4" />
-      </video>
+<video
+  autoPlay
+  muted
+  loop
+  className="rotate-180 absolute top-0 left-0 w-full h-full z-[-1] object-cover md:max-w-[800px] md:max-h-[450px] md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
+  onLoadedData={() => setVideoLoaded(true)}
+>
+  <source src="/atomic.mp4" type="video/mp4" />
+</video>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#40046e">

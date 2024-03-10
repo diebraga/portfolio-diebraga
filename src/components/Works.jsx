@@ -8,136 +8,100 @@ import { Button, Carousel } from "@material-tailwind/react";
 import { useIsMobile } from "../hooks/useIsMobile";
 import ArrowButton from "./ArrowButton";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
+import { cn } from "../utils/cn";
+import { BentoGrid, BentoGridItem } from "../components/BentoGrid";
+
+export function WorkGrid() {
   return (
-    <div className="xs:w-[350px] w-full mb-8">
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="shadow-xl shadow-purple-300/50 text-purple-200 border-purple-300 border-2 rounded-xl"
-        style={{ position: "relative" }}
-      >
-        <div
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className="bg-black rounded-[20px] min-h-[360px] px-5 py-4r"
-        >
-          <div className="relative w-full h-[230px] mt-3">
-            <img
-              src={image}
-              alt="project_image"
-              className="w-full h-full object-cover rounded-2xl"
-            />
-          </div>
-
-          <div className="mt-5">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[14px]">{description}</p>
-          </div>
-          <Button onClick={() => window.open(source_code_link, "_blank")} className="mb-3 mt-1 w-full flex items-center gap-2 justify-center">
-            View on github
-            <FaGithub  className="text-lg"/>
-          </Button>
-
-          <div className="my-3 flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <p
-                key={`${name}-${tag.name}`}
-                className={`text-[14px] ${tag.color}`}
-              >
-                #{tag.name}
-              </p>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </div>
+    <BentoGrid className="max-w-full">
+      {items.map((item, i) => (
+        <BentoGridItem
+          key={i}
+          title={item.title}
+          description={item.description}
+          header={item.header}
+          icon={item.icon}
+          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+          link={item.source_code_link}
+          tags={item.tags}
+        />
+      ))}
+    </BentoGrid>
   );
-};
-
+}
+const items = [
+  {
+    description: "A Minecraft clone with react, react-three-fiber and threejs.",
+    title: "Minecraft Clone",
+    header: "https://user-images.githubusercontent.com/52054459/225892189-affbd469-5e98-4d18-be76-c9d2a7803ca4.png",
+    source_code_link: "https://github.com/diebraga/mine-craft-react",
+    tags: ["React", "ThreeJs", "Zustand"],
+  },
+  {
+    description: "FastAi app predicts the probability of image to be a Dog a Cat.",
+    title: "Image Classification",
+    header: "https://user-images.githubusercontent.com/52054459/224771687-2ed97135-8669-4775-a81b-e1097fd26500.gif",
+    source_code_link: "https://github.com/diebraga/image_classification_machine_learning",
+    tags: ["FastAi", "Python", "FastApi"],
+  },
+  {
+    description: "NextJs app simulates Google Street View functionalities with R3F.",
+    title: "Tour View",
+    header: "https://user-images.githubusercontent.com/52054459/224830831-78c14202-3f59-4d2e-bd11-b0a0abab0d05.gif",
+    source_code_link: "https://github.com/diebraga/tour_view",
+    tags: ["NextJS", "ThreeJs"],
+  },
+  {
+    description: "NextJS Web 3 app where you store your ideas in the blockchain.",
+    title: "My Ideas",
+    header: "https://github.com/diebraga/my-ideas/assets/52054459/8f0f81ee-a84d-4e36-9b86-2ab6431b0ea9",
+    source_code_link: "https://github.com/diebraga/my-ideas",
+    tags: ["NextJS", "Solidity", "Hardhat"],
+  },
+  {
+    description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
+    title: "BabylonJS Starter",
+    header: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
+    source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
+    tags: ["NextJS", "BabylonJS"],
+  },
+  {
+    description: "Simple realtime chat room with NextJs Nodejs Express and socketIo.",
+    title: "Realtime Chatroom",
+    header: "https://user-images.githubusercontent.com/52054459/224837848-912a5bd1-2fa0-47bd-8d59-78437d3eea98.gif",
+    source_code_link: "https://github.com/diebraga/simple_chatroom_app",
+    tags: ["NodeJS", "SocketIO", "React"],
+  },
+  {
+    description: "Geography game guess countries or flags using Nextjs and ChakraUI.",
+    title: "GeoGuessWorld",
+    header: "https://user-images.githubusercontent.com/52054459/224839866-2b382fd5-fe92-4c30-a8d0-f656de87e3ba.gif",
+    source_code_link: "https://github.com/diebraga/GuessGeoWorld",
+    tags: ["NextJS", "ChakraUI"],
+  },
+  {
+    description: "Web 3 app that sends ETH txs to addresses and stores in the blockchain",
+    title: "Web3 Transactions",
+    header: "https://github.com/diebraga/web-3-transactions/assets/52054459/012e6140-04f8-4202-b902-0a9ebdcbfda0",
+    source_code_link: "https://github.com/diebraga/web-3-transactions",
+    tags: ["Vite", "Solidity", "Tailwind"],
+  },
+  {
+    description: "Shopping cart in with Nextjs, using api routes and stripe checkout.",
+    title: "Stripe Shop",
+    header: "https://user-images.githubusercontent.com/52054459/200176756-f34c8511-841b-42aa-b1b7-0d2829a9bdd5.png",
+    source_code_link: "https://github.com/diebraga/ignite_shop_2022",
+    tags: ["NextJS", "Stitches", "Stripe"],
+  },
+  {
+    description: "A Facial recognition app with python, openCv, fastApi and React.",
+    title: "Facial Recognition",
+    header: "https://user-images.githubusercontent.com/52054459/225896553-f9cef9b9-26ff-43d6-affc-8448e812eac1.png",
+    source_code_link: "https://github.com/diebraga/facial_recognition",
+    tags: ["OpenCv", "Python", "FastApi"],
+  },
+];
 const Works = () => {
-  const { isMobileView } = useIsMobile()
-  const projects = [
-    {
-      description: "A Minecraft clone with react, react-three-fiber and threejs.",
-      name: "Minecraft Clone",
-      image: "https://user-images.githubusercontent.com/52054459/225892189-affbd469-5e98-4d18-be76-c9d2a7803ca4.png",
-      source_code_link: "https://github.com/diebraga/mine-craft-react",
-      tags: ["React", "ThreeJs", "Zustand"],
-    },
-    {
-      description: "A Facial recognition app with python, openCv, fastApi and React.",
-      name: "Facial Recognition",
-      image: "https://user-images.githubusercontent.com/52054459/225896553-f9cef9b9-26ff-43d6-affc-8448e812eac1.png",
-      source_code_link: "https://github.com/diebraga/facial_recognition",
-      tags: ["OpenCv", "Python", "FastApi"],
-    },
-    {
-      description: "FastAi app predicts the probability of image to be a Dog a Cat.",
-      name: "Image Classification",
-      image: "https://user-images.githubusercontent.com/52054459/224771687-2ed97135-8669-4775-a81b-e1097fd26500.gif",
-      source_code_link: "https://github.com/diebraga/image_classification_machine_learning",
-      tags: ["FastAi", "Python", "FastApi"],
-    },
-    {
-      description: "NextJs app simulates Google Street View functionalities with R3F.",
-      name: "Tour View",
-      image: "https://user-images.githubusercontent.com/52054459/224830831-78c14202-3f59-4d2e-bd11-b0a0abab0d05.gif",
-      source_code_link: "https://github.com/diebraga/tour_view",
-      tags: ["NextJS", "ThreeJs"],
-    },
-    {
-      description: "NextJS Web 3 app where you store your ideas in the blockchain.",
-      name: "My Ideas",
-      image: "https://github.com/diebraga/my-ideas/assets/52054459/8f0f81ee-a84d-4e36-9b86-2ab6431b0ea9",
-      source_code_link: "https://github.com/diebraga/my-ideas",
-      tags: ["NextJS", "Soliditey", "Hardhat"],
-    },
-    {
-      description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
-      name: "BabylonJS Starter",
-      image: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
-      source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
-      tags: ["NextJS", "BabylonJS"],
-    },
-    {
-      description: "Simple realtime chat room with NextJs Nodejs Express and socketIo.",
-      name: "Realtime Chatroom",
-      image: "https://user-images.githubusercontent.com/52054459/224837848-912a5bd1-2fa0-47bd-8d59-78437d3eea98.gif",
-      source_code_link: "https://github.com/diebraga/simple_chatroom_app",
-      tags: ["NodeJS", "SocketIO", "React"],
-    },
-    {
-      description: "Geography game guess countries or flags using Nextjs and ChakraUI.",
-      name: "GeoGuessWorld",
-      image: "https://user-images.githubusercontent.com/52054459/224839866-2b382fd5-fe92-4c30-a8d0-f656de87e3ba.gif",
-      source_code_link: "https://github.com/diebraga/GuessGeoWorld",
-      tags: ["NextJS", "ChakraUI"],
-    },
-    {
-      description: "Web 3 app that sends ETH txs to addresses and stores in the blockchain",
-      name: "Web3 Transactions",
-      image: "https://github.com/diebraga/web-3-transactions/assets/52054459/012e6140-04f8-4202-b902-0a9ebdcbfda0",
-      source_code_link: "https://github.com/diebraga/web-3-transactions",
-      tags: ["Vite", "Solidity", "Tailwind"],
-    },
-    {
-      description: "Shopping cart in with Nextjs, using api routes and stripe checkout.",
-      name: "Stripe Shop",
-      image: "https://user-images.githubusercontent.com/52054459/200176756-f34c8511-841b-42aa-b1b7-0d2829a9bdd5.png",
-      source_code_link: "https://github.com/diebraga/ignite_shop_2022",
-      tags: ["NextJS", "Stitches", "Stripe"],
-    }
-  ];
 
   return (
     <>
@@ -155,59 +119,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {isMobileView ? (
-        <Carousel 
-          autoplay 
-          loop
-          prevArrow={({ handlePrev }) => (
-            <ArrowButton handlePrev={handlePrev}/>
-          )}
-          nextArrow={({ handleNext }) => (
-            <ArrowButton handleNext={handleNext}/>
-          )}            
-        >
-          {projects.map((project, index) => (
-            <div key={index} className="w-full flex justify-center py-9 px-2">
-              <ProjectCard
-                index={index}
-                description={project.description}
-                name={project.name}
-                image={project.image}
-                source_code_link={project.source_code_link}
-                tags={project.tags.map(tag => ({ name: tag }))}
-              />
-            </div>
-          ))}
-        </Carousel>
-      ) : (
-        <Carousel 
-          autoplay 
-          loop
-          prevArrow={({ handlePrev }) => (
-            <ArrowButton handlePrev={handlePrev}/>
-          )}
-          nextArrow={({ handleNext }) => (
-            <ArrowButton handleNext={handleNext}/>
-          )}            
-        >
-          {Array.from({ length: Math.ceil(projects.length / 2) }, (_, i) => (
-            <div key={i} className="w-full flex justify-evenly py-9 px-2">
-              {projects.slice(i * 2, i * 2 + 2).map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  index={i * 3 + index}
-                  description={project.description}
-                  name={project.name}
-                  image={project.image}
-                  source_code_link={project.source_code_link}
-                  tags={project.tags.map(tag => ({ name: tag }))}
-                />
-              ))}
-            </div>
-          ))}
-        </Carousel>
-      )}
-
+    <WorkGrid/>
     </>
   );
 };

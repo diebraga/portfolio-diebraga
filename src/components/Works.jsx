@@ -38,7 +38,7 @@ const items = [
     tags: ["React", "ThreeJs", "Zustand"],
   },
   {
-    description: "FastAi app predicts the probability of image to be a Dog a Cat.",
+    description: "FastAi app predicts the probability of image to be a Dog or a Cat.",
     title: "Image Classification",
     header: "https://user-images.githubusercontent.com/52054459/224771687-2ed97135-8669-4775-a81b-e1097fd26500.gif",
     source_code_link: "https://github.com/diebraga/image_classification_machine_learning",

@@ -38,7 +38,7 @@ const Hero = ({startSound}) => {
       >
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            {!videoLoaded && (
+            {videoLoaded && (
               <TypewriterEffectSmooth words={words} />
             )}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">

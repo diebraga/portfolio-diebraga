@@ -27,6 +27,7 @@ import {
   prisma,
   socket,
   grpc,
+  eth,
 } from "../assets";
 
 export const navLinks = [
@@ -61,6 +62,10 @@ const services = [
     title: "Backend Developer",
     icon: nodejs,
     icon2: python,
+  },
+  {
+    title: "Web 3 Developer",
+    icon: eth,
   },
 ];
 

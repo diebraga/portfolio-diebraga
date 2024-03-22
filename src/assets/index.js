@@ -33,6 +33,7 @@ import socket from "./tech/socket.png";
 import express from "./tech/express.jpeg";
 import django from "./tech/django.png";
 import grpc from "./tech/grpc.png";
+import eth from "./tech/ethh.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -86,5 +87,6 @@ export {
   express,
   prisma,
   django,
-  grpc
+  grpc,
+  eth,
 };

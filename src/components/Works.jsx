@@ -24,6 +24,7 @@ export function WorkGrid() {
           className={i === 3 || i === 6 ? "md:col-span-2" : ""}
           link={item.source_code_link}
           tags={item.tags}
+          live={items.live}
         />
       ))}
     </BentoGrid>
@@ -36,6 +37,7 @@ const items = [
     header: "https://user-images.githubusercontent.com/52054459/225892189-affbd469-5e98-4d18-be76-c9d2a7803ca4.png",
     source_code_link: "https://github.com/diebraga/mine-craft-react",
     tags: ["React", "ThreeJs", "Zustand"],
+    live: "https://mine-craft-react.vercel.app/"
   },
   {
     description: "FastAi app predicts the probability of image to be a Dog or a Cat.",
@@ -50,6 +52,7 @@ const items = [
     header: "https://user-images.githubusercontent.com/52054459/224830831-78c14202-3f59-4d2e-bd11-b0a0abab0d05.gif",
     source_code_link: "https://github.com/diebraga/tour_view",
     tags: ["NextJS", "ThreeJs"],
+    live:"https://tour-view.vercel.app/property"
   },
   {
     description: "NextJS Web 3 app where you store your ideas in the blockchain.",
@@ -57,6 +60,7 @@ const items = [
     header: "https://github.com/diebraga/my-ideas/assets/52054459/8f0f81ee-a84d-4e36-9b86-2ab6431b0ea9",
     source_code_link: "https://github.com/diebraga/my-ideas",
     tags: ["NextJS", "Solidity", "Hardhat"],
+    live:"https://my-ideas-9vtbacpzr-diebraga.vercel.app/"
   },
   {
     description: "NextJS App renders a scene and 3th person camera using BabylonJs.",
@@ -64,6 +68,7 @@ const items = [
     header: "https://user-images.githubusercontent.com/52054459/224835610-f1f17da5-bb4d-494e-8d91-fa898e615fc0.gif",
     source_code_link: "https://github.com/diebraga/next_js_babylonjs_demo",
     tags: ["NextJS", "BabylonJS"],
+    live:"https://full-stack-nextjs-auth.vercel.app/"
   },
   {
     description: "Simple realtime chat room with NextJs Nodejs Express and socketIo.",
@@ -78,6 +83,7 @@ const items = [
     header: "https://user-images.githubusercontent.com/52054459/224839866-2b382fd5-fe92-4c30-a8d0-f656de87e3ba.gif",
     source_code_link: "https://github.com/diebraga/GuessGeoWorld",
     tags: ["NextJS", "ChakraUI"],
+    live:"https://guess-geo-world.vercel.app/"
   },
   {
     description: "Web 3 app that sends ETH txs to addresses and stores in the blockchain",
@@ -85,6 +91,7 @@ const items = [
     header: "https://github.com/diebraga/web-3-transactions/assets/52054459/012e6140-04f8-4202-b902-0a9ebdcbfda0",
     source_code_link: "https://github.com/diebraga/web-3-transactions",
     tags: ["Vite", "Solidity", "Tailwind"],
+    live:"https://web-3-transactions.vercel.app/"
   },
   {
     description: "Shopping cart in with Nextjs, using api routes and stripe checkout.",
@@ -92,6 +99,7 @@ const items = [
     header: "https://user-images.githubusercontent.com/52054459/200176756-f34c8511-841b-42aa-b1b7-0d2829a9bdd5.png",
     source_code_link: "https://github.com/diebraga/ignite_shop_2022",
     tags: ["NextJS", "Stitches", "Stripe"],
+    live:"https://ignite-shop-2022.vercel.app/"
   },
   {
     description: "A Facial recognition app with python, openCv, fastApi and React.",

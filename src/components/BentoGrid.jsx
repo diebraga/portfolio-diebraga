@@ -25,7 +25,8 @@ export const BentoGridItem = ({
   header,
   icon,
   link,
-  tags
+  tags,
+  live
 }) => {
   return (
     <div
@@ -64,6 +65,8 @@ export const BentoGridItem = ({
             View on github
             <FaGithub  className="text-lg"/>
           </Button>
+          {live && <a href={live} target="_blank" className="text-blue-500 hover:text-blue-700">Live code</a>}
+          
 
     </div>
   );

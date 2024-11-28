@@ -85,12 +85,12 @@ const Experience = () => {
   autoPlay
   muted
   loop
-  className="rotate-180 absolute top-0 left-0 w-full h-full z-[-1] object-cover md:max-w-[800px] md:max-h-[450px] md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2"
+  className="rotate-180 absolute top-0 left-0 w-full h-full z-[-1] object-cover md:max-w-[800px] md:max-h-[450px] md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none"
   onLoadedData={() => setVideoLoaded(true)}
+  tabIndex={-1} // Prevents the video from being focusable
 >
   <source src="/atomic.mp4" type="video/mp4" />
 </video>
-
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#40046e">
           {experiences.map((experience, index) => (

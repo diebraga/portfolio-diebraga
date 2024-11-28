@@ -24,16 +24,16 @@ const Hero = ({startSound}) => {
           <div className="animate-ping h-10 w-10 rounded-full bg-purple-700"></div>
         </div>      
       )}
-     <video
-        autoPlay
-        muted
-        loop
-        className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-[-1] object-cover"
-        onLoadedData={() => setVideoLoaded(true)}
-      >
-        <source src="/blackhole.webm" type="video/webm" />
-      </video>
-      <div
+   <video
+  autoPlay
+  muted
+  loop
+  className="rotate-180 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-[-1] object-cover pointer-events-none"
+  onLoadedData={() => setVideoLoaded(true)}
+  tabIndex={-1} // Prevents the video from being focusable
+>
+  <source src="/blackhole.webm" type="video/webm" />
+</video>
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div>
